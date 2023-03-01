@@ -1,0 +1,31 @@
+{
+  "name": "a02-webserver",
+  "version": "0.0.1",
+  "description": "a web server",
+  "main": "server.js",
+  "type": "module",
+  "scripts": {
+    "test": "node cli.js -n 35.92 -w 79.05 -z America/New_York"
+  },
+  "bin": {
+    "galosh.js": "./cli.js"
+  },
+  "dependencies":{
+    "node-fetch":"^3.3.0",
+    "moment-timezone":"^0.5.41",
+    "minimist":"^1.2.7"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/comp426-2023-spring/a02-functions-zhuoyu73.git"
+  },
+  "keywords": [
+    "web"
+  ],
+  "author": "zhuoyu73",
+  "license": "GPL-3.0-or-later",
+  "bugs": {
+    "url": "https://github.com/comp426-2023-spring/a02-functions-zhuoyu73/issues"
+  },
+  "homepage": "https://github.com/comp426-2023-spring/a02-functions-zhuoyu73#readme"
+}
