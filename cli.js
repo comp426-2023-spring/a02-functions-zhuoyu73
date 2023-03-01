@@ -23,6 +23,8 @@ if (args.h){
 }
 
 const timezone = moment.tz.guess();
+const latitude = args.n;
+const longitude = args.e;
 
 // Make a request
 const response = await fetch('https://api.open-meteo.com/v1/forecast?latitude=' + latitude + '&longitude=' + longitude + '&hourly=temperature_2m,weathercode,windspeed_120m,winddirection_120m&daily=weathercode,precipitation_hours&temperature_unit=fahrenheit&timezone=' + timezone);
