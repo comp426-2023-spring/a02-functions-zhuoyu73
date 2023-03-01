@@ -17,9 +17,9 @@ if (args.h){
                 -d 0-6        Day to retrieve weather: 0 is today; defaults to 1.
                 -j            Echo pretty JSON from open-meteo API and exit.
             `)
-        process.exitCode(0);
+        process.exit(0);
     }catch(err){
-        process.exitCode(1);
+        process.exit(1);
     }
 }
 
@@ -31,6 +31,12 @@ const longitude = args.e || (-1 * args.w);
 const response = await fetch('https://api.open-meteo.com/v1/forecast?latitude=' + latitude + '&longitude=' + longitude + '&hourly=temperature_2m,weathercode,windspeed_120m,winddirection_120m&daily=weathercode,precipitation_hours&temperature_unit=fahrenheit&timezone=' + timezone);
 // Get the data from the request
 const data = await response.json();
+
+if (args.j){
+    console.log(data);
+    process.exit(0);
+}
+
 
 const days = args.d; 
 if (days == 0) {
